@@ -13,7 +13,6 @@ public class Doctor extends User {
     private List<MedicalRecord> medicalRecordList = new ArrayList<>();
     private List<Integer> test = new ArrayList<>();;
 
-
     public Doctor(Role role, Departmen departmen) {
         this.role = role;
         this.departmen = departmen;
@@ -47,7 +46,6 @@ public class Doctor extends User {
 
     public void removeSpecialisations(Integer indexToRemove){
         specialisationsList.remove(indexToRemove);
-
     }
 
     public void addReservation(Reservation reservation){
