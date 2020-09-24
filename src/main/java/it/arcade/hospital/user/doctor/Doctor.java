@@ -3,25 +3,23 @@ package it.arcade.hospital.user.doctor;
 import it.arcade.hospital.user.User;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class Doctor extends User {
 
     private Role role;
-    private Departmen departmen;
+    private Department department;
     private List<Specialisations> specialisationsList = new ArrayList<>();
     private List<MedicalRecord> medicalRecordList = new ArrayList<>();
-    private List<Integer> test = new ArrayList<>();;
 
-    public Doctor(Role role, Departmen departmen) {
+    public Doctor(Role role, Departmen department) {
         this.role = role;
-        this.departmen = departmen;
+        this.department = department;
     }
 
-    public Doctor(Long id, String name, String surname, String email, String password, Date entryDate, Role role, Departmen departmen) {
+    public Doctor(Long id, String name, String surname, String email, String password, Date entryDate, Role role, Departmen department) {
         super(id, name, surname, email, password, entryDate);
         this.role = role;
-        this.departmen = departmen;
+        this.department = department;
     }
 
     public Role getRole() {
@@ -32,27 +30,43 @@ public class Doctor extends User {
         this.role = role;
     }
 
-    public Departmen getDepartmen() {
-        return departmen;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setDepartmen(Departmen departmen) {
-        this.departmen = departmen;
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public List<Specialisations> getSpecialisationsList() {
+        return specialisationsList;
+    }
+
+    public void setSpecialisationsList(List<Specialisations> specialisationsList) {
+        this.specialisationsList = specialisationsList;
+    }
+
+    public List<MedicalRecord> getMedicalRecordList() {
+        return medicalRecordList;
+    }
+
+    public void setMedicalRecordList(List<MedicalRecord> medicalRecordList) {
+        this.medicalRecordList = medicalRecordList;
     }
 
     public void addSpecialisations(Specialisations specialization){
         specialisationsList.add(specialization);
     }
 
-    public void removeSpecialisations(Integer indexToRemove){
-        specialisationsList.remove(indexToRemove);
+    public void removeSpecialisations(Specialisations specialization){
+        specialisationsList.remove(specialization);
     }
 
-    public void addReservation(Reservation reservation){
-        reservationList.add(reservation);
+    public void addMedicalRecord(MedicalRecord medicalRecord){
+        medicalRecordList.add(medicalRecord);
     }
 
-    public void removeReservation(Integer indexToRemove){
-        reservationList.remove(indexToRemove);
+    public void removeMedicalRecord(MedicalRecord medicalRecord){
+        medicalRecordList.remove(medicalRecord);
     }
 }
