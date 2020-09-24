@@ -57,6 +57,4 @@ public class Patient extends User {
     public void removeReservation(Reservation reservation){
         reservationList.remove(reservation);
     }
-
-
 }
