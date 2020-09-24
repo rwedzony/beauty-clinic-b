@@ -12,29 +12,27 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Medical_record")
+@Table(name = "medical_record")
 public class MedicalRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private Long id;
+    private int id;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "patient_id")
+    @JoinColumn(name = "id_patient")
     private Patient patient;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "doctor_id")
+    @JoinColumn(name = "id_doctor")
     private Doctor doctor;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id")
+    @JoinColumn(name = "id_department")
     private Department department;
+    @Column(name = "disease")
+    private String disease;
     @Column(name = "description")
     private String description;
     @Column(name = "medicines")
     private String medicines;
-    @Column(name = "start_date_in_hospital")
-    private Date startDate;
-    @Column(name = "end_date_in_hospital")
-    private Date endDate;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "entry_date")
