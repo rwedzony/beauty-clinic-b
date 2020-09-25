@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class MedicalRecordService {
+
     private final MedicalRecordRepository medicalRecordRepository;
 
     public List<MedicalRecord> findMedicalRecordByPatient(Patient patient){
