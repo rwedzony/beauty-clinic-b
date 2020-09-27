@@ -3,9 +3,7 @@ package it.arcade.hospital.user.doctor;
 import it.arcade.hospital.medicalrecord.MedicalRecord;
 import it.arcade.hospital.user.User;
 import lombok.*;
-
 import javax.persistence.*;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
