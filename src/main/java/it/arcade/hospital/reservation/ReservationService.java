@@ -2,7 +2,6 @@ package it.arcade.hospital.reservation;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -11,19 +10,23 @@ public class ReservationService {
 
     private final ReservationRepository reservationRepository;
 
-    public List<Reservation> findReservationByPatient(Patient patient){
-        return reservationRepository.findReservationByPatient(patient);
+    void saveReservation (Reservation reservation){
+        reservationRepository.save(reservation);
     }
 
-    public List<Reservation> findMReservationByDoctor(Doctor doctor){
-        return reservationRepository.findReservationByDoctor(doctor);
+    void deleteReservation (Reservation reservation){
+        reservationRepository.delete(reservation);
     }
 
-    public List<Reservation> saveReservation (Reservation reservation){
-        return reservationRepository.saveReservation(reservation);
+    public Reservation findReservationById(Long reservationId){
+        return reservationRepository.findReservationById(reservationId);
     }
 
-    public List<Reservation> deleteReservation (Reservation reservation){
-        return reservationRepository.deleteReservation(reservation);
+    public List<Reservation> findAllReservationByPatient(Patient patient){
+        return reservationRepository.findAllReservationByPatient(patient);
+    }
+
+    public List<Reservation> findAllReservationByDoctor(Doctor doctor){
+        return reservationRepository.findAllReservationByDoctor(doctor);
     }
 }
