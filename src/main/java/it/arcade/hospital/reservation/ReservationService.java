@@ -1,0 +1,4 @@
+package it.arcade.hospital.reservation;
+
+public class ReservationService {
+}
