@@ -6,7 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 
 @Data
-@NoArgsConstructor
+@RequiredArgsConstructor
 @EqualsAndHashCode
 @ToString
 @Entity
