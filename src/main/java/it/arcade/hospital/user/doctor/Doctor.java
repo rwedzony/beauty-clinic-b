@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@NoArgsConstructor
+@RequiredArgsConstructor
 @EqualsAndHashCode
 @ToString
 @Entity
