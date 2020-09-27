@@ -1,8 +1,10 @@
 package it.arcade.hospital.user.doctor;
 
+import it.arcade.hospital.medicalrecord.MedicalRecord;
 import it.arcade.hospital.user.User;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Doctor extends User {
 
