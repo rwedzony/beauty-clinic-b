@@ -1,10 +1,12 @@
 package it.arcade.hospital.reservation;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 
 @Data
+@RequiredArgsConstructor
 @Entity
 @Table(name="reservation")
 public class Reservation {
