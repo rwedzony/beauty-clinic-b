@@ -1,16 +1,23 @@
 package it.arcade.hospital.reservation;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class ReservationService {
 
+    @Autowired
     private final ReservationRepository reservationRepository;
 
-    void saveReservation (Reservation reservation){
+    void addReservation (Reservation reservation){
+        reservationRepository.save(reservation);
+    }
+
+    void updateReservation (Reservation reservation) {
         reservationRepository.save(reservation);
     }
 
@@ -18,15 +25,12 @@ public class ReservationService {
         reservationRepository.delete(reservation);
     }
 
-    public Reservation findReservationById(Long reservationId){
-        return reservationRepository.findReservationById(reservationId);
+    public Optional<Reservation> getReservationById(Integer id){
+        return reservationRepository.findById(id);
     }
 
-    public List<Reservation> findAllReservationByPatient(Patient patient){
-        return reservationRepository.findAllReservationByPatient(patient);
-    }
-
-    public List<Reservation> findAllReservationByDoctor(Doctor doctor){
-        return reservationRepository.findAllReservationByDoctor(doctor);
+    public List<Reservation> getAllReservations(){
+        List<Reservation> reservations = (List<Reservation>) reservationRepository.findAll();
+        return reservations;
     }
 }

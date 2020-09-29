@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @RequiredArgsConstructor
@@ -14,7 +15,7 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    Long id;
+    int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_patient")
