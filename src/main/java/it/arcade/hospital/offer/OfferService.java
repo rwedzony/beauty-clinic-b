@@ -27,7 +27,8 @@ public class OfferService {
 	
 	public List<Offer> getAllOffersByName (String name) {
 		List<Offer> offers = offerRepository.findAllByName(name);
-		return isEmpty(offers) ? new ArrayList<Offer>() : offers;
+		return offerRepository.findAllByName(name);
+
 	}
 
 }
