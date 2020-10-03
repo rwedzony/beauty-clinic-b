@@ -21,7 +21,8 @@ public class OfferService {
 	
 	public List<Offer> getAllOffersForDepartment(Department department) {
 		List<Offer> offers = offerRepository.findAllByDepartment(department);
-		return isEmpty(offers) ? new ArrayList<Offer>() : offers;
+		return offerRepository.findAllByDepartment(department);
+
 	}
 	
 	public List<Offer> getAllOffersByName (String name) {
@@ -30,4 +31,3 @@ public class OfferService {
 	}
 
 }
-
