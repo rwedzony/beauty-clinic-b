@@ -20,17 +20,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 public class Offer {
-	
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	@NotNull
-	private String offerName;
-	@NotNull
-	private BigDecimal price;
+    private Long id;
+    @NotNull
+    private String offerName;
+    @NotNull
+    private BigDecimal price;
 	
-	@ManyToOne
-	@JoinColumn(name = "id_department")
-	private Department department;
-	
+    @ManyToOne
+    @JoinColumn(name = "id_department")
+    private Department department;
+
 }
