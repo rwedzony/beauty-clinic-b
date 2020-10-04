@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface OfferRepository extends JpaRepository<Offer, Long> {
 
 	List<Offer> findAllByDepartment(Department department);
-	List<Offer> findAllByName(String name);
+	List<Offer> findAllByOfferName(String offerName);
 
 }

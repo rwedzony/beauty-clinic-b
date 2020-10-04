@@ -14,7 +14,6 @@ public class OfferService {
 	
 	private final OfferRepository offerRepository;
 
-	@Autowired
 	public OfferService(OfferRepository offerRepository) {
 		this.offerRepository = offerRepository;
 	}
@@ -24,8 +23,8 @@ public class OfferService {
 		return isEmpty(offers) ? new ArrayList<Offer>() : offers;
 	}
 	
-	public List<Offer> getAllOffersByName (String name) {
-		List<Offer> offers = offerRepository.findAllByName(name);
+	public List<Offer> getAllOffersByName (String offerName) {
+		List<Offer> offers = offerRepository.findAllByOfferName(offerName);
 		return isEmpty(offers) ? new ArrayList<Offer>() : offers;
 	}
 

@@ -23,14 +23,14 @@ public class Offer {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	Long id;
+	private Long id;
 	@NotNull
-	String name;
+	private String offerName;
 	@NotNull
-	BigDecimal price;
+	private BigDecimal price;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_department")
-	Department department;
+	@ManyToOne
+	@JoinColumn(name = "id_department")
+	private Department department;
 	
 }
