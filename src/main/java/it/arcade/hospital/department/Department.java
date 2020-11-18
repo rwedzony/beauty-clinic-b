@@ -23,6 +23,6 @@ public class Department {
     String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="head_doctor")
+    @JoinColumn(name = "head_doctor")
     Doctor headDoctor;
 }
