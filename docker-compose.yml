@@ -1,0 +1,9 @@
+hospital-database:
+  restart: always
+  image: postgres
+  ports:
+    - 5555:5432
+  env_file:
+    - database.env
+  volumes:
+    - src/main/resources/sql_scripts/schema.sql
