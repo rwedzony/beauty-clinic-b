@@ -1,24 +1,28 @@
 package it.arcade.hospital.department;
 
+import javax.persistence.*;
+
+import it.arcade.hospital.user.doctor.Doctor;
+
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import javax.persistence.*;
+
 
 @Data
 @RequiredArgsConstructor
 @Entity
-@Table(name="department")
+@Table(name = "department")
 public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
+    @Column(name = "id")
     int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="head_doctor")
+    @JoinColumn(name = "head_doctor")
     Doctor headDoctor;
 }

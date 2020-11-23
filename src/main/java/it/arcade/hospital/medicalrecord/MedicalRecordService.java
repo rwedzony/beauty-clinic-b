@@ -1,10 +1,14 @@
 package it.arcade.hospital.medicalrecord;
 
-import lombok.AllArgsConstructor;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
+import it.arcade.hospital.user.doctor.Doctor;
+import it.arcade.hospital.user.patient.Patient;
+
+import lombok.AllArgsConstructor;
+
 
 @Service
 @AllArgsConstructor

@@ -1,15 +1,22 @@
 package it.arcade.hospital.reservation;
 
+import java.util.Date;
+
+import javax.persistence.*;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import it.arcade.hospital.user.doctor.Doctor;
+import it.arcade.hospital.user.patient.Patient;
+
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import javax.persistence.*;
-import java.util.Date;
+
 
 @Data
 @RequiredArgsConstructor
 @Entity
-@Table(name="reservation")
+@Table(name = "reservation")
 public class Reservation {
 
     @Id
