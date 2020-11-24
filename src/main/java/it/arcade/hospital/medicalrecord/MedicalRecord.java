@@ -1,12 +1,19 @@
 package it.arcade.hospital.medicalrecord;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
+import java.util.Date;
 
 import javax.persistence.*;
-import java.util.Date;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import it.arcade.hospital.department.Department;
+import it.arcade.hospital.user.doctor.Doctor;
+import it.arcade.hospital.user.patient.Patient;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Data
 @NoArgsConstructor
