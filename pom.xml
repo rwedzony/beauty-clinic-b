@@ -19,6 +19,8 @@
 		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<thymeleaf.extras.version>3.0.4.RELEASE</thymeleaf.extras.version>
+		<apache.common.collections.version>4.0</apache.common.collections.version>
+		<checkstyle.plugin.version>3.1.1</checkstyle.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -81,7 +83,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-collections4</artifactId>
-			<version>4.0</version>
+			<version>${apache.common.collections.version}</version>
 		</dependency>
 
     </dependencies>
@@ -95,7 +97,7 @@
 			<plugin>
    				<groupId>org.apache.maven.plugins</groupId>
    				<artifactId>maven-checkstyle-plugin</artifactId>
-   				<version>3.1.1</version>
+   				<version>${checkstyle.plugin.version}</version>
    				<configuration>
      				<configLocation>checkstyle.xml</configLocation>
      				<encoding>${project.build.sourceEncoding}</encoding>
