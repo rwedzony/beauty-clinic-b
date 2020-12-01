@@ -18,7 +18,7 @@
 		<java.version>15</java.version>
 		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+		<thymeleaf.extras.version>3.0.4.RELEASE</thymeleaf.extras.version>
 	</properties>
 
 	<dependencies>
@@ -76,7 +76,7 @@
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
-			<version>3.0.4.RELEASE</version>
+			<version>${thymeleaf.extras.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
