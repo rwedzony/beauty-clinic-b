@@ -1,17 +1,19 @@
 package it.arcade.hospital.user.doctor;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import it.arcade.hospital.department.Department;
-import it.arcade.hospital.medicalrecord.MedicalRecord;
 import it.arcade.hospital.role.Role;
-import it.arcade.hospital.specialisation.Specialisation;
 import it.arcade.hospital.user.User;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 
 @Data
@@ -29,7 +31,7 @@ public class Doctor extends User {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department")
     private Department department;
-
-    private List<Specialisation> specialisationsList = new ArrayList<>();
-    private List<MedicalRecord> medicalRecordList = new ArrayList<>();
+//fixme add necessary relation annotation
+//    private List<Specialisation> specialisationsList = new ArrayList<>();
+//    private List<MedicalRecord> medicalRecordList = new ArrayList<>();
 }

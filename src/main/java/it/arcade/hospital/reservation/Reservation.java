@@ -2,7 +2,17 @@ package it.arcade.hospital.reservation;
 
 import java.util.Date;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -35,15 +45,15 @@ public class Reservation {
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "start_date")
-    Date starDate;
+    Date starDate; //todo replace with localdatetime
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "end_date")
-    Date endDate;
+    Date endDate;//todo replace with localdatetime
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "entry_date")
-    Date entryDate;
+    Date entryDate;//todo replace with localdatetime
 }

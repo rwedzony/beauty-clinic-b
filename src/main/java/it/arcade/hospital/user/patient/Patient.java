@@ -1,15 +1,15 @@
 package it.arcade.hospital.user.patient;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-import javax.persistence.*;
-
-import it.arcade.hospital.medicalrecord.MedicalRecord;
-import it.arcade.hospital.reservation.Reservation;
 import it.arcade.hospital.user.User;
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 
 @Data
@@ -22,7 +22,7 @@ public class Patient extends User {
 
     @Column(name = "pesel")
     private String pesel;
-
-    private List<MedicalRecord> medicalRecordList = new ArrayList<>();
-    private List<Reservation> reservation = new ArrayList<>();
+//fixme add necessary relation annotation
+//    private List<MedicalRecord> medicalRecordList = new ArrayList<>();
+//    private List<Reservation> reservation = new ArrayList<>();
 }
