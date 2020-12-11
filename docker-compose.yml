@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  hospital_db:
+    restart: always
+    image: postgres
+    container_name: hospital_database
+    ports:
+      - 5432:5432
+    env_file:
+      - database.env
+    volumes:
+      - ./src/main/resources/sql_scripts/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./postgres-data:/hospital/data
+volumes:
+  postgres-data:
