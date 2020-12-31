@@ -1,4 +1,4 @@
-package it.arcade.hospital;
+package it.hospital.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

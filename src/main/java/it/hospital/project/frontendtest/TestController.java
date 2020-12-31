@@ -1,4 +1,4 @@
-package it.arcade.hospital.test;
+package it.hospital.project.frontendtest;
 
 import java.util.Map;
 

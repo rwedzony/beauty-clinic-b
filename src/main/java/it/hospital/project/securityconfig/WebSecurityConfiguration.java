@@ -1,4 +1,4 @@
-package it.arcade.hospital.config;
+package it.hospital.project.securityconfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,8 +14,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.
-                authorizeRequests()
-                    .antMatchers("/", "/index", "/test").permitAll()
+                    authorizeRequests()
+                    .antMatchers("/**", "/index", "/test").permitAll()
                     .anyRequest().authenticated();
     }
 
