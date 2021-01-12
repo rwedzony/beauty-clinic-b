@@ -1,4 +1,4 @@
-package it.arcade.hospital.test;
+package it.hospital.project.frontendtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
