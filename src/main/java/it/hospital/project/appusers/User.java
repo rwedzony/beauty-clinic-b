@@ -12,6 +12,7 @@ public class User {
     @Id
     private int id;
 
+    private String pesel;
 
     private String firstName;
 
@@ -36,7 +37,14 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
-    
+
+    public String getPesel() {
+        return pesel;
+    }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
 
     public String getFirstName() {
         return firstName;
