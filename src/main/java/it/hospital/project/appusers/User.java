@@ -1,7 +1,10 @@
 package it.hospital.project.appusers;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,7 +12,12 @@ import javax.persistence.Table;
 @Table(name = "appuser")
 public class User {
 
+    public User() {
+    }
+
     @Id
+    @GeneratedValue(generator = "inc")
+    @GenericGenerator(name = "inc", strategy = "increment")
     private int id;
 
     private String pesel;
