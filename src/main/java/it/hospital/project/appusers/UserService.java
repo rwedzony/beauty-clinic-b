@@ -1,6 +1,5 @@
 package it.hospital.project.appusers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +9,7 @@ public class UserService {
 
     UserRepository userRepository;
 
-    @Autowired
+
     UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -21,11 +20,13 @@ public class UserService {
     }
 
     public void deleteUser(int id) {
+        // TODO: need to implement deleting of a user from the app database
     }
 
 
-    public void updateUser(User user) {
 
+    public void updateUser(User user) {
+        // TODO: need to implement updating of a user from the app database
     }
 
     public List<User> getAllUsers() {
