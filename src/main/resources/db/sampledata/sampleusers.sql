@@ -1,5 +1,5 @@
 --User insertions
-insert into appuser (first_name, last_name , phoneNumber,
+insert into appuser (first_name, last_name , phone_number,
   address, city, postcode, email, password) values('Jan',
                                                    'Nowak',
                                                    '+48500000000',
@@ -11,7 +11,7 @@ insert into appuser (first_name, last_name , phoneNumber,
 
 
 --User insertion
-insert into appuser (first_name, last_name , phoneNumber,
+insert into appuser (first_name, last_name , phone_number,
                   address, city, postcode, email, password) values('Marek',
                                                                    'Gladysz',
                                                                    '+48500000000',
