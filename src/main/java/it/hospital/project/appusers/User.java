@@ -30,6 +30,19 @@ public class User {
         this.password = password;
     }
 
+    public User(int id, String pesel, String firstName, String lastName, String phoneNumber, String address, String city, String postcode, String email, String password) {
+        this.id = id;
+        this.pesel = pesel;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.city = city;
+        this.postcode = postcode;
+        this.email = email;
+        this.password = password;
+    }
+
     @Id
     @GeneratedValue(generator = "inc")
     @GenericGenerator(name = "inc", strategy = "increment")
