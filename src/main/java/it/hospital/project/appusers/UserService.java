@@ -3,6 +3,7 @@ package it.hospital.project.appusers;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -21,7 +22,8 @@ public class UserService {
     }
 
     public void deleteUser(int id) {
-        // TODO: need to implement deleting of a user from the app database
+        Optional<User> user = userRepository.findById(id);
+        user.ifPresent(t->userRepository.delete(t));
     }
 
 
