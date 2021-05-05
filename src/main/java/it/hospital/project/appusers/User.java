@@ -30,7 +30,7 @@ public class User {
         this.password = password;
     }
 
-    public User(int id, String pesel, String firstName, String lastName, String phoneNumber, String address, String city, String postcode, String email, String password) {
+    public User(int id, String pesel, String firstName, String lastName, String phoneNumber,String address, String city, String postcode, String email, String password) {
         this.id = id;
         this.pesel = pesel;
         this.firstName = firstName;
