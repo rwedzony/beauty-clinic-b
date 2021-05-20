@@ -28,13 +28,4 @@ public class UserRepositoryTest {
         userRepository.deleteAll();
     }
 
-    @Test
-    public void testSaveUserAndFindById() {
-
-        var user = new User ("12312312311","Adam","Boski","519643353","Kaczynska 22","Gdynia","00=000","maja@wp.pl","test123");
-        userRepository.save(user);
-        var maybeUser = userRepository.findById(1);
-        assertThat(maybeUser,is(Optional.of(user)));
-
-    }
 }

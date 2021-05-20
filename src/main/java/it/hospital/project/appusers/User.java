@@ -16,12 +16,13 @@ public class User {
     }
 
     // constructor for tests
-    public User(String pesel, String firstName, String lastName, String phoneNumber,
+    public User(String pesel, String firstName, String lastName, String description, String url, String phoneNumber,
                 String address, String city, String postcode, String email, String password) {
-        this.id = id;
         this.pesel = pesel;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.description = description;
+        this.url = url;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.city = city;
@@ -30,11 +31,14 @@ public class User {
         this.password = password;
     }
 
-    public User(int id, String pesel, String firstName, String lastName, String phoneNumber,String address, String city, String postcode, String email, String password) {
+    public User(int id, String pesel, String firstName, String lastName, String description,  String url,
+                String phoneNumber, String city, String address, String postcode, String email, String password) {
         this.id = id;
         this.pesel = pesel;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.description = description;
+        this.url = url;
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.city = city;
@@ -53,6 +57,10 @@ public class User {
     private String firstName;
 
     private String lastName;
+
+    private String description;
+
+    private String url;
 
     private String phoneNumber;
 
@@ -144,5 +152,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
