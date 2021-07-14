@@ -1,14 +1,13 @@
 package it.hospital.project.appusers;
 
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
 
     UserService(UserRepository userRepository) {
@@ -23,9 +22,8 @@ public class UserService {
 
     public void deleteUser(int id) {
         Optional<User> user = userRepository.findById(id);
-        user.ifPresent(t->userRepository.delete(t));
+        user.ifPresent(t -> userRepository.delete(t));
     }
-
 
 
     public void updateUser(User user) {
