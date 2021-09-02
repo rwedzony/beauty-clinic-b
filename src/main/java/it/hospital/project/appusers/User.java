@@ -1,10 +1,9 @@
 package it.hospital.project.appusers;
 
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,10 +11,24 @@ import javax.persistence.Table;
 @Table(name = "appuser")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String pesel;
+    private String firstName;
+    private String lastName;
+    private String description;
+    private String url;
+    private String phoneNumber;
+    private String address;
+    private String city;
+    private String postcode;
+    private String email;
+    private String password;
+
     public User() {
     }
 
-    // constructor for tests
     public User(String pesel, String firstName, String lastName, String description, String url, String phoneNumber,
                 String address, String city, String postcode, String email, String password) {
         this.pesel = pesel;
@@ -31,7 +44,7 @@ public class User {
         this.password = password;
     }
 
-    public User(int id, String pesel, String firstName, String lastName, String description,  String url,
+    public User(Long id, String pesel, String firstName, String lastName, String description, String url,
                 String phoneNumber, String city, String address, String postcode, String email, String password) {
         this.id = id;
         this.pesel = pesel;
@@ -47,39 +60,9 @@ public class User {
         this.password = password;
     }
 
-    @Id
-    @GeneratedValue(generator = "inc")
-    @GenericGenerator(name = "inc", strategy = "increment")
-    private int id;
 
-    private String pesel;
-
-    private String firstName;
-
-    private String lastName;
-
-    private String description;
-
-    private String url;
-
-    private String phoneNumber;
-
-    private String address;
-
-    private String city;
-
-    private String postcode;
-
-    private String email;
-
-    private String password;
-
-    public int getId() {
+    public Long getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getPesel() {

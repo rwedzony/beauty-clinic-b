@@ -20,7 +20,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public void deleteUser(int id) {
+    public void deleteUser(Long id) {
         Optional<User> user = userRepository.findById(id);
         user.ifPresent(t -> userRepository.delete(t));
     }
