@@ -11,13 +11,15 @@
 
 package it.hospital.project.appointments;
 
-public class AppointmentDto {
+public class AppointmentUnregisteredUserDto {
     private String date;
     private String time;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
+    private String serviceType;
+    private String specialisation;
 
     public String getDate() {
         return date;
@@ -41,5 +43,13 @@ public class AppointmentDto {
 
     public String getPhone() {
         return phone;
+    }
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public String getSpecialisation() {
+        return specialisation;
     }
 }

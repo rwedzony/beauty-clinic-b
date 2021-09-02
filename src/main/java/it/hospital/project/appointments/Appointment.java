@@ -11,7 +11,7 @@
 
 package it.hospital.project.appointments;
 
-import it.hospital.project.appusers.User;
+import it.hospital.project.unregisteredusers.UnregisteredUser;
 import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -34,9 +34,25 @@ public class Appointment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    User user;
+    UnregisteredUser unRegUser;
 
     public Long getId() {
         return id;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public UnregisteredUser getUnRegUser() {
+        return unRegUser;
+    }
+
+    public void setUnRegUser(UnregisteredUser unRegUser) {
+        this.unRegUser = unRegUser;
     }
 }

@@ -14,6 +14,7 @@ package it.hospital.project.appointments;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,15 +31,14 @@ public class AppointmentController {
     }
 
     @PostMapping
-    ResponseEntity<?> addAppointment(@RequestBody AppointmentDto appointmentDto) {
-        System.out.println(appointmentDto.getDate());
-        System.out.println(appointmentDto.getTime());
-        System.out.println(appointmentDto.getFirstName());
-        System.out.println(appointmentDto.getLastName());
-        System.out.println(appointmentDto.getPhone());
-
-        return new ResponseEntity<>(HttpStatus.OK);
+    ResponseEntity<?> addAppointment(@RequestBody AppointmentUnregisteredUserDto appointmentUnregisteredUserDto) {
+        return new ResponseEntity<>(appointmentService.addAppointmentAsUnregUser(appointmentUnregisteredUserDto), HttpStatus.OK);
     }
 
-
+    @GetMapping
+    ResponseEntity<?> getAllAppointments() {
+        return new ResponseEntity<>(appointmentService.getAllAppointments(), HttpStatus.OK);
+    }
 }
+
+
