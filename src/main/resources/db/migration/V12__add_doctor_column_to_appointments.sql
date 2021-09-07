@@ -1,0 +1,2 @@
+ALTER TABLE T_APPOINTMENTS
+    ADD COLUMN doctor varchar(255);

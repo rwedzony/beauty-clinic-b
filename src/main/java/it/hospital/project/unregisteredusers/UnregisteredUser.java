@@ -11,6 +11,7 @@
 
 package it.hospital.project.unregisteredusers;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "T_UNREGISTEREDUSERS")
+@JsonPropertyOrder( {"id", "firstName", "lastName", "phoneNumber", "email"})
 public class UnregisteredUser {
     @Id
     @GeneratedValue(generator = "inc")

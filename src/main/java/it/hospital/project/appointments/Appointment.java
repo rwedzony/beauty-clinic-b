@@ -11,6 +11,7 @@
 
 package it.hospital.project.appointments;
 
+import it.hospital.project.clinicservices.ClinicService;
 import it.hospital.project.unregisteredusers.UnregisteredUser;
 import java.time.LocalDate;
 import javax.persistence.Entity;
@@ -36,6 +37,12 @@ public class Appointment {
     @JoinColumn(name = "user_id")
     UnregisteredUser unRegUser;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "service_id")
+    ClinicService clinicService;
+
+    String doctor;
+
     public Long getId() {
         return id;
     }
@@ -54,5 +61,21 @@ public class Appointment {
 
     public void setUnRegUser(UnregisteredUser unRegUser) {
         this.unRegUser = unRegUser;
+    }
+
+    public ClinicService getClinicService() {
+        return clinicService;
+    }
+
+    public void setClinicService(ClinicService clinicService) {
+        this.clinicService = clinicService;
+    }
+
+    public String getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(String doctor) {
+        this.doctor = doctor;
     }
 }

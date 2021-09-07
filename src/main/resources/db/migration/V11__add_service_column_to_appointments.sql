@@ -1,0 +1,2 @@
+ALTER TABLE T_APPOINTMENTS
+    ADD COLUMN service_id serial;

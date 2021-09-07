@@ -11,6 +11,7 @@
 
 package it.hospital.project.clinicservices;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "T_SERVICES")
+@JsonPropertyOrder( {"name"})
 public class ClinicService {
 
     @Id
@@ -31,6 +33,10 @@ public class ClinicService {
     private String name;
 
     public ClinicService() {
+    }
+
+    public ClinicService(String name) {
+        this.name = name;
     }
 
     public int getId() {

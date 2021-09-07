@@ -12,6 +12,7 @@
 package it.hospital.project.appointments;
 
 
+import it.hospital.project.clinicservices.ClinicService;
 import it.hospital.project.unregisteredusers.UnregisteredUser;
 import it.hospital.project.unregisteredusers.UnregisteredUserRepository;
 import java.time.LocalDate;
@@ -40,6 +41,10 @@ public class AppointmentService {
         unregisteredUserRepository.save(unregisteredUser);
         appointment.setUnRegUser(unregisteredUser);
         appointment.setDate(LocalDate.parse(appointmentUnregisteredUserDto.getDate()));
+        ClinicService clinicService = new ClinicService();
+        clinicService.setName(appointmentUnregisteredUserDto.getServiceType());
+        appointment.setClinicService(clinicService);
+        appointment.setDoctor(appointmentUnregisteredUserDto.getDoctor());
         appointmentRepository.save(appointment);
 
         return appointment;

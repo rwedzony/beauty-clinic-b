@@ -19,7 +19,7 @@ public class AppointmentUnregisteredUserDto {
     private String email;
     private String phone;
     private String serviceType;
-    private String specialisation;
+    private String doctor;
 
     public String getDate() {
         return date;
@@ -49,7 +49,7 @@ public class AppointmentUnregisteredUserDto {
         return serviceType;
     }
 
-    public String getSpecialisation() {
-        return specialisation;
+    public String getDoctor() {
+        return doctor;
     }
 }
