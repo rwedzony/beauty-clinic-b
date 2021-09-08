@@ -1,6 +1,3 @@
-# Project hospital
+# Beauty Clinic backend
 Technologies:
 Spring Boot
-
-
-
