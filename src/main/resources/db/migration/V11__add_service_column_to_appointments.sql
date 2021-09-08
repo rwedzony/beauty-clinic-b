@@ -1,2 +1,2 @@
 ALTER TABLE T_APPOINTMENTS
-    ADD COLUMN service_id serial;
+    ADD COLUMN service_id integer;

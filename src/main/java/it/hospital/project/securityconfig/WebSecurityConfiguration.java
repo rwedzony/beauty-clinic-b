@@ -19,7 +19,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/test", "/api/users/**",
-                        "/api/appointments/**", "/api/services/**")
+                        "/api/appointments/**", "/api/services/**", "/h2-console/**")
                 .permitAll()
 
                 .anyRequest()
