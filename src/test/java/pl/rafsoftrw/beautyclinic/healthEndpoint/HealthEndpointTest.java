@@ -1,4 +1,4 @@
-package pl.rafsoftrw.beautyclinic.frontendtest;
+package pl.rafsoftrw.beautyclinic.healthEndpoint;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,8 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ContextConfiguration
 @WebAppConfiguration
-@WebMvcTest(HealthController.class)
-class HealthControllerTest {
+@WebMvcTest(HealthEndpoint.class)
+class HealthEndpointTest {
 
     @Autowired
     private WebApplicationContext context;
