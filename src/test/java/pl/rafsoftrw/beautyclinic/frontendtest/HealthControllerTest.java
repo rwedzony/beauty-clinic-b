@@ -1,4 +1,4 @@
-package it.hospital.project.frontendtest;
+package pl.rafsoftrw.beautyclinic.frontendtest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -21,8 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ContextConfiguration
 @WebAppConfiguration
-@WebMvcTest(TestController.class)
-class TestControllerTest {
+@WebMvcTest(HealthController.class)
+class HealthControllerTest {
 
     @Autowired
     private WebApplicationContext context;
@@ -34,15 +33,14 @@ class TestControllerTest {
         JacksonTester.initFields(this, new ObjectMapper());
         mockMvc = MockMvcBuilders
                 .webAppContextSetup(context)
-                .apply(SecurityMockMvcConfigurers.springSecurity())
                 .build();
     }
 
     @Test
-    void testEndpoint() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/test"))
+    void healthEndpoint() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get("/health"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(content().json("{\"test\":\"test\"}"));
+                .andExpect(content().json("{\"status\":\"OK\"}"));
     }
 }

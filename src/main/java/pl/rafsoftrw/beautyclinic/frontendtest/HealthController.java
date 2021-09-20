@@ -1,4 +1,4 @@
-package it.hospital.project.frontendtest;
+package pl.rafsoftrw.beautyclinic.frontendtest;
 
 import java.util.Map;
 
@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/health")
 @CrossOrigin
-public class TestController {
+public class HealthController {
 
     @GetMapping("")
     public ResponseEntity<?> getTestData() {
-        return ResponseEntity.ok(Map.of("test", "test"));
+        return ResponseEntity.ok(Map.of("status", "OK"));
     }
 }

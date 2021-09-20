@@ -5,91 +5,33 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.3.RELEASE</version>
+		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>it.arcade</groupId>
-	<artifactId>hospital</artifactId>
+
+	<groupId>pl.rafsoftrw</groupId>
+	<artifactId>beautyclinic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hospital</name>
-	<description>Project hospital</description>
+	<name>beauty-clinic</name>
+	<description>beauty-clinic app backend part</description>
 
 	<properties>
 		<java.version>15</java.version>
 		<maven.compiler.source>15</maven.compiler.source>
 		<maven.compiler.target>15</maven.compiler.target>
-		<flyway.version>6.5.0</flyway.version>
-		<apache.commons.collections.version>4.0</apache.commons.collections.version>
-		<checkstyle.plugin.version>3.1.1</checkstyle.plugin.version>
-		<database.url>jdbc:postgresql://localhost:5432/hospital_database</database.url>
-		<database.user>postgres</database.user>
-		<database.password>root</database.password>
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<version>${flyway.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-collections4</artifactId>
-			<version>${apache.commons.collections.version}</version>
 		</dependency>
 
     </dependencies>
@@ -99,38 +41,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-   				<groupId>org.apache.maven.plugins</groupId>
-   				<artifactId>maven-checkstyle-plugin</artifactId>
-   				<version>${checkstyle.plugin.version}</version>
-   				<configuration>
-     				<configLocation>checkstyle.xml</configLocation>
-     				<encoding>UTF-8</encoding>
-     				<consoleOutput>true</consoleOutput>
-    				<failsOnError>false</failsOnError>
-     				<linkXRef>false</linkXRef>
-   				</configuration>
-<!--   				<executions>-->
-<!--     				<execution>-->
-<!--       					<id>validate</id>-->
-<!--       					<phase>validate</phase>-->
-<!--       					<goals>-->
-<!--         					<goal>check</goal>-->
-<!--       					</goals>-->
-<!--     				</execution>-->
-<!--   				</executions>-->
- 			</plugin>
-			<plugin>
-				<groupId>org.flywaydb</groupId>
-				<artifactId>flyway-maven-plugin</artifactId>
-				<version>${flyway.version}</version>
-				<configuration>
-					<url>${database.url}</url>
-					<user>${database.user}</user>
-					<password>${database.password}</password>
-				</configuration>
-
 			</plugin>
 		</plugins>
 	</build>

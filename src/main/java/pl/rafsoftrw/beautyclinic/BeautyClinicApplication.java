@@ -1,13 +1,13 @@
-package it.hospital.project;
+package pl.rafsoftrw.beautyclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HospitalApplication {
+public class BeautyClinicApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HospitalApplication.class, args);
+        SpringApplication.run(BeautyClinicApplication.class, args);
     }
 
 }

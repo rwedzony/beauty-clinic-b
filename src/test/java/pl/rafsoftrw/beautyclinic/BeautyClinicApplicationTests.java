@@ -1,10 +1,10 @@
-package it.hospital.project;
+package pl.rafsoftrw.beautyclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HospitalApplicationTests {
+class BeautyClinicApplicationTests {
 
 	@Test
 	void contextLoads() {
