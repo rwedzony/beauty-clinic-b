@@ -1,4 +1,4 @@
-package pl.rafsoftrw.beautyclinic.frontendtest;
+package pl.rafsoftrw.beautyclinic.healthEndpoint;
 
 import java.util.Map;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/health")
 @CrossOrigin
-public class HealthController {
+public class HealthEndpoint {
 
     @GetMapping("")
     public ResponseEntity<?> getTestData() {
