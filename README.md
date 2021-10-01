@@ -1,4 +1,4 @@
 # Beauty Clinic backend
 
 Technologies:
-Spring Boot
+Spring Boot, PostgreSql
