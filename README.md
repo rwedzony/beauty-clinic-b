@@ -1,4 +1,4 @@
 # Beauty Clinic backend
 
 Technologies:
-Spring Boot, Maven, PostgreSql
+Spring Boot, Spring Data, Maven, PostgreSql
