@@ -1,4 +1,4 @@
-package pl.rafsoftrw.beautyclinic.healthEndpoint;
+package pl.rafsoftrw.beautyclinic.endpoints;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;

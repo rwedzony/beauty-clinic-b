@@ -1,4 +1,4 @@
-package pl.rafsoftrw.beautyclinic.healthEndpoint;
+package pl.rafsoftrw.beautyclinic.endpoints;
 
 import java.util.Map;
 
