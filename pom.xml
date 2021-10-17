@@ -19,8 +19,6 @@
         <java.version>15</java.version>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
-        <acriveProfile>dev</acriveProfile>
-        <spring.acitve.profile>dev</spring.acitve.profile>
     </properties>
 
     <dependencies>
@@ -80,25 +78,21 @@
     <profiles>
         <profile>
             <id>dev</id>
-            <activation>
-                <property>
-                    <name>activeProfile</name>
-                    <value>dev</value>
-                </property>
-            </activation>
             <properties>
                 <spring.profiles.active>h2</spring.profiles.active>
             </properties>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+            </build>
         </profile>
 
         <profile>
             <id>prod</id>
-            <activation>
-                <property>
-                    <name>activeProfile</name>
-                    <value>prod</value>
-                </property>
-            </activation>
             <properties>
                 <spring.profiles.active>postgre</spring.profiles.active>
             </properties>
