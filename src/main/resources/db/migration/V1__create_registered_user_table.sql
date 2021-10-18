@@ -1,6 +1,6 @@
-CREATE TABLE T_REGISTERED_USER
+CREATE TABLE T_REGISTERED_USERS
 (
-    REGISTERED_USER_ID serial,
+    ID serial,
     FIRST_NAME varchar(255),
     LAST_NAME  varchar(255),
     PHONE_NUMBER  varchar(20),
@@ -9,5 +9,5 @@ CREATE TABLE T_REGISTERED_USER
     POSTCODE  varchar(10),
     EMAIL  varchar(255),
     PASSWORD varchar(255),
-    PRIMARY KEY(id)
+    PRIMARY KEY(ID)
 );
