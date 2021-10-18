@@ -16,9 +16,13 @@
     <description>beauty-clinic app backend part</description>
 
     <properties>
-        <java.version>15</java.version>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <flyway.version>6.5.0</flyway.version>
+        <postgres.database.url>jdbc:postgresql://localhost:5432/beauty-clinic-db</postgres.database.url>
+        <postgres.database.user>postgres</postgres.database.user>
+        <postgres.database.password>root</postgres.database.password>
     </properties>
 
     <dependencies>
@@ -46,6 +50,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
@@ -56,17 +66,9 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
-
     </dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -79,25 +81,38 @@
         <profile>
             <id>dev</id>
             <properties>
-                <spring.profiles.active>h2</spring.profiles.active>
+                <springActive>h2</springActive>
             </properties>
-            <build>
-                <resources>
-                    <resource>
-                        <directory>src/main/resources</directory>
-                        <filtering>true</filtering>
-                    </resource>
-                </resources>
-            </build>
         </profile>
-
+        
         <profile>
             <id>prod</id>
             <properties>
-                <spring.profiles.active>postgre</spring.profiles.active>
+                <springActive>postgre</springActive>
             </properties>
-        </profile>
 
+            <dependencies>
+                <dependency>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-core</artifactId>
+                    <version>${flyway.version}</version>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.flywaydb</groupId>
+                        <artifactId>flyway-maven-plugin</artifactId>
+                        <version>${flyway.version}</version>
+                        <configuration>
+                            <url>${postgres.database.url}</url>
+                            <user>${postgres.database.user}</user>
+                            <password>${postgres.database.password}</password>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
 </project>
