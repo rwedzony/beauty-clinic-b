@@ -4,5 +4,7 @@ Technologies:
 Spring Boot, Spring Data, Flyway, Maven, PostgreSql
 
 ## TODO:
-1. Add working dev and prod profiles
-2. Add Registered User resources
+1 Add UnRegistered User resources
+2 Add Apointments resources 
+3 Add validatins for appointments
+
