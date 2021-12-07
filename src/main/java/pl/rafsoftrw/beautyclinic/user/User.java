@@ -1,17 +1,22 @@
-package pl.rafsoftrw.beautyclinic.registereduser;
+package pl.rafsoftrw.beautyclinic.user;
 
+import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import pl.rafsoftrw.beautyclinic.address.Address;
 
-import javax.persistence.*;
-import java.util.Objects;
-
 @Entity
-@Table(name="T_USERS")
+@Table(name = "T_USERS")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "REGISTERED_USER_ID")
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "FIRST_NAME")
@@ -33,7 +38,7 @@ public class User {
     private String pesel;
 
     @OneToOne
-    @Column(name="ADDRESS_ID")
+    @Column(name = "ADDRESS_ID")
     private Address address;
 
     public Long getId() {
@@ -64,7 +69,6 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -83,8 +87,12 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         User that = (User) o;
         return id.equals(that.id);
     }

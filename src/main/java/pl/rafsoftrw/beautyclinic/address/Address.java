@@ -1,14 +1,19 @@
 package pl.rafsoftrw.beautyclinic.address;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="T_ADDRESSES")
+@Table(name = "T_ADDRESSES")
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "REGISTERED_USER_ID")
+    @Column(name = "ID")
     private Long id;
 
     @Column(name = "STREET_NAME")
