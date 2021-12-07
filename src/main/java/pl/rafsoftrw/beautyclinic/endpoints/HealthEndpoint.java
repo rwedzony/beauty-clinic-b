@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Api(tags = "Health", description = "usługa sprawdzająca działanie aplikacji")
 @RestController
-@RequestMapping("/health")
+@RequestMapping("/api/health")
 @CrossOrigin
 public class HealthEndpoint {
 

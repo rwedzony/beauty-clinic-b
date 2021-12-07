@@ -1,11 +1,13 @@
 package pl.rafsoftrw.beautyclinic.registereduser;
 
+import pl.rafsoftrw.beautyclinic.address.Address;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="T_REGISTERED_USERS")
-public class RegisteredUser {
+@Table(name="T_USERS")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,23 +20,21 @@ public class RegisteredUser {
     @Column(name = "LAST_NAME")
     private String lastName;
 
+    @Column(name = "PASSWORD")
+    private String password;
+
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
-
-    @Column(name = "ADDRESS")
-    private String address;
-
-    @Column(name = "CITY")
-    private String city;
-
-    @Column(name = "POSTCODE")
-    private String postcode;
 
     @Column(name = "EMAIL")
     private String email;
 
-    @Column(name = "PASSWORD")
-    private String password;
+    @Column(name = "EMAIL")
+    private String pesel;
+
+    @OneToOne
+    @Column(name="ADDRESS_ID")
+    private Address address;
 
     public Long getId() {
         return id;
@@ -64,29 +64,6 @@ public class RegisteredUser {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getPostcode() {
-        return postcode;
-    }
-
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
-    }
 
     public String getEmail() {
         return email;
@@ -108,7 +85,7 @@ public class RegisteredUser {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RegisteredUser that = (RegisteredUser) o;
+        User that = (User) o;
         return id.equals(that.id);
     }
 
