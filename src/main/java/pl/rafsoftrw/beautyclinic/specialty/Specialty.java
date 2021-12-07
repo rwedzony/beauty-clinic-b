@@ -26,4 +26,7 @@ public class Specialty {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
+
+    @Column(name = "SPECIALTY_NAME")
+    private String specialtyName;
 }

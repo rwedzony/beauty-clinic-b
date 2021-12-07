@@ -9,7 +9,7 @@
  * Above notice must be preserved in all copies of this code.
  */
 
-package pl.rafsoftrw.beautyclinic.role;
+package pl.rafsoftrw.beautyclinic.clinicservice;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,15 +19,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "T_ROLES")
-public class Role {
+@Table(name = "T_CLINIC_SERVICES")
+public class ClinicService {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
-
-    @Column(name = "ROLE_NAME")
-    private String roleName;
-
 }
