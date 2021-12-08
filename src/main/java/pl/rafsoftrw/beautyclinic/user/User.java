@@ -85,6 +85,22 @@ public class User {
         this.password = password;
     }
 
+    public String getPesel() {
+        return pesel;
+    }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -104,7 +120,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "RegisteredUser{" +
+        return "User{" +
                 "id=" + id +
                 '}';
     }
